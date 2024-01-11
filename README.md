@@ -4,7 +4,6 @@
 Welcome to the AirBnB clone project. This is the first step towards building our first full web application. The project focuses on creating a command interpreter to manage the clone AirBnB objects, which will be the foundation for further developments including HTML/CSS templating, database storage, API, and front-end integration.
 
 ## Team Members
-- Andrew Pabie
 - Desmond Karani
 
 ## Project Duration
@@ -67,7 +66,6 @@ python3 -m unittest tests/test_models/test_base_model.py
 This project is part of our software engineering training program. Contributions are not accepted.
 
 ## Authors
-- Andrew Pabie
 - Desmond Karani
 
 ## License
