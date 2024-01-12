@@ -5,6 +5,7 @@ from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from unittest.mock import patch
 
+
 class TestFileStorage(unittest.TestCase):
 
     def setUp(self):
@@ -67,6 +68,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(len(self.storage.all()), 0)
 
     # Additional tests can be added here...
+
 
 if __name__ == "__main__":
     unittest.main()

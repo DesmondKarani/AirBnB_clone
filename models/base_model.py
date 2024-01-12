@@ -3,6 +3,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
     def __init__(self, *args, **kwargs):
         if kwargs:
@@ -22,7 +23,8 @@ class BaseModel:
                 storage.new(self)
 
     def __str__(self):
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """Updates updated_at and saves the object to file storage."""
@@ -32,7 +34,8 @@ class BaseModel:
         storage.save()
 
     def to_dict(self):
-        """ Returns a dictionary containing all keys/values of __dict__ of the instance. """
+        """ Returns a dictionary containing all keys/values
+        of __dict__ of the instance. """
         dictionary = self.__dict__.copy()
         dictionary['__class__'] = self.__class__.__name__
         dictionary['created_at'] = dictionary['created_at'].isoformat()

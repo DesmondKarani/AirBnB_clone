@@ -4,6 +4,7 @@ import unittest
 from datetime import datetime  # Add this line
 from models.base_model import BaseModel
 
+
 class TestBaseModel(unittest.TestCase):
 
     def test_id_creation(self):
@@ -48,6 +49,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(my_new_model.id, my_model.id)
         self.assertEqual(my_new_model.created_at, my_model.created_at)
         self.assertEqual(my_new_model.updated_at, my_model.updated_at)
+
 
 if __name__ == '__main__':
     unittest.main()
