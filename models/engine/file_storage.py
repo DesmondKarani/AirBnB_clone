@@ -5,6 +5,11 @@
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage:
@@ -31,9 +36,9 @@ class FileStorage:
                 for key, value in objs.items():
                     cls_name = value['__class__']
                     del value['__class__']
-                    if cls_name == 'BaseModel':
-                        FileStorage.__objects[key] = BaseModel(**value)
-                    elif cls_name == 'User':
-                        FileStorage.__objects[key] = User(**value)
+                    if cls_name in globals():
+                        FileStorage.__objects[key] = globals()[cls_name](
+                                **value
+                                )
         except FileNotFoundError:
             pass
