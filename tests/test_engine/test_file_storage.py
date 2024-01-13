@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+Test suite for the BaseModel class in the models module.
+Tests cover initialization, serialization, and storage integration.
+"""
+
+
 import unittest
 import os
 import json

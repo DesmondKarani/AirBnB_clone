@@ -1,4 +1,9 @@
-# File: tests/test_models/test_base_model.py
+#!/usr/bin/python3
+"""
+Test suite for the BaseModel class in the models module.
+Tests cover initialization, serialization, and storage integration.
+"""
+
 
 import unittest
 from datetime import datetime  # Add this line

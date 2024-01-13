@@ -1,4 +1,5 @@
-# models/__init__.py
+"""Package initialization"""
+
 
 from .engine.file_storage import FileStorage
 
