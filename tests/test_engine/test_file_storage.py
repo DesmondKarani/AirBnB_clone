@@ -11,6 +11,7 @@ import json
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from unittest.mock import patch
+from models.user import User
 
 
 class TestFileStorage(unittest.TestCase):
@@ -74,7 +75,20 @@ class TestFileStorage(unittest.TestCase):
         self.storage.reload()
         self.assertEqual(len(self.storage.all()), 0)
 
-    # Additional tests can be added here...
+    def test_user_instance(self):
+        """Test handling of User instances."""
+        user = User()
+        user.email = "user@example.com"
+        user.password = "password"
+        user.first_name = "John"
+        user.last_name = "Doe"
+        self.storage.new(user)
+        self.storage.save()
+        self.storage.reload()
+        key = f"User.{user.id}"
+        self.assertIn(key, self.storage.all())
+        reloaded_user = self.storage.all()[key]
+        self.assertEqual(reloaded_user.email, "user@example.com")
 
 
 if __name__ == "__main__":
